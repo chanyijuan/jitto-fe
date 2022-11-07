@@ -40,12 +40,12 @@ const Flipbox = (props: FlipboxProps) => {
         </Tabs>
       </Grid>
       <Grid item container justifyContent="center" alignItems="center">
-        <TabPanel
+        {/* <TabPanel
           hidden={value !== "login"}
           children={<LoginPanel setIsAuth = {setIsAuth} />}
           value={value}
           index={"login"}
-        />
+        /> */}
         <TabPanel
           hidden={value !== "detail"}
           children={<DetailPanel />}

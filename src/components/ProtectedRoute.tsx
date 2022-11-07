@@ -13,7 +13,7 @@ const ProtectedRoute = (props: ProtectedRouteProps) => {
 		return element;
 	}
 
-	return <Navigate to='/' />
+	return <Navigate to='/login' />
 };
 
 export default ProtectedRoute;

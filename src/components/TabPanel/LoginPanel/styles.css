@@ -1,0 +1,17 @@
+.loginPanel {
+  box-shadow: 0px 0px 30px 0px darkslateblue;
+  width: 350px;
+  background-color: white;
+  height: 400px;
+  margin: 50px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.loginHeader {
+  font-size: 50px;
+  font-weight: bold;
+  font: Helvetica;
+  color: darkslateblue;
+  margin: 30px auto;
+}
