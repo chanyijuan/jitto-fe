@@ -4,8 +4,10 @@ import { Tabs, Tab, Grid } from "@mui/material";
 import TabPanel from "../TabPanel/TabPanel";
 import LoginPanel from "../TabPanel/LoginPanel/LoginPanel";
 import DetailPanel from "../TabPanel/DetailPanel/DetailPanel";
+import { FlipboxProps } from "./interfaces";
 
-const Flipbox = () => {
+const Flipbox = (props: FlipboxProps) => {
+  const { setIsAuth } = props
   const [value, setValue] = useState("login");
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
@@ -15,7 +17,7 @@ const Flipbox = () => {
     <Grid
       container
       direction="column"
-      sx={{ backgroundColor: "lavender", margin: "50px", borderRadius: "10px" }}
+      sx={{ backgroundColor: "lavender", margin: "50px", borderRadius: "10px", boxShadow: "10px" }}
     >
       <Grid
         item
@@ -40,7 +42,7 @@ const Flipbox = () => {
       <Grid item container justifyContent="center" alignItems="center">
         <TabPanel
           hidden={value !== "login"}
-          children={<LoginPanel />}
+          children={<LoginPanel setIsAuth = {setIsAuth} />}
           value={value}
           index={"login"}
         />

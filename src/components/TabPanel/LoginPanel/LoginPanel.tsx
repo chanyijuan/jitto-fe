@@ -1,12 +1,22 @@
 import React, { SyntheticEvent, useState } from "react";
 // Components
 import { TextField } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-const LoginPanel = () => {
+interface LoginProps {
+  setIsAuth: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const LoginPanel = (props: LoginProps) => {
+  const navigate = useNavigate();
+  const { setIsAuth } = props;
  	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
-	const handleSubmit = (event: SyntheticEvent) => {
+	
+  const handleLogin = (event: SyntheticEvent) => {
 		if (username && password) {
+      setIsAuth(true);
+      navigate('/dashboard');
 			console.log('Username: ', username);
 			console.log('Password: ', password);
 			setUsername('');
@@ -23,7 +33,7 @@ const LoginPanel = () => {
       }}
 			noValidate
 			autoComplete='off'
-			onSubmit={handleSubmit}
+			onSubmit={handleLogin}
     >
       <TextField
 				required
